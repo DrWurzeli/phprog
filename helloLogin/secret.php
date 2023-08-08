@@ -2,7 +2,7 @@
 session_start();
 //check login status
 if (isset($_SESSION['username'])) {
-    ?>
+?>
     <html lang="en_US">
     <head>
         <title>Secret</title>
@@ -14,8 +14,7 @@ if (isset($_SESSION['username'])) {
         </form>
     </body>
     </html>
-    <?php
-
+<?php
 }//if not logged in reject
 else {
     header("Location: index.php");
