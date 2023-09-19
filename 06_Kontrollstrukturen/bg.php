@@ -7,20 +7,20 @@
         body {
             background-color:
             <?php
-            date_default_timezone_set("Europe/Berlin");
-            $time = date("H");
-            if ($time < 5  || $time > 20) echo "black";
-            elseif ($time < 11) echo "lightblue";
-            elseif ($time <15) echo "blue";
-            elseif ($time <18) echo "yellow";
-            else echo "orange";
+                date_default_timezone_set("Europe/Berlin");
+                $time = date("H");
+                if ($time < 5  || $time > 20) echo "black";
+                elseif ($time < 11) echo "lightblue";
+                elseif ($time <15) echo "blue";
+                elseif ($time <18) echo "yellow";
+                else echo "orange";
             ?>;
         }
     </style>
 </head>    
 <body>
     <?php
-        echo "hallo";
+        echo "moin";
     ?>
 </body>
 </html>
