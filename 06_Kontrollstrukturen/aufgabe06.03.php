@@ -1,23 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>1v1</title>
+    <style>
+        th, td {
+            text-align: center;
+        }
+        table {
+            border-spacing: 10px;
+        }
+    </style>
+</head>    
+<body>
 <?php
     //dice game random numbers till 25
-
     //setup
     $p1 = $p2 = array();
-    $winner = "game is still going on";
-
-    //dice roll helper function
-    function rollDice(array $arr){
-        $newRoll = random_int(1, 6);
-        $arr[] = $newRoll;
-        //echo $newRoll." ";
-        return $arr;
-    };
+    $winner = "";
+    $round = 1;
 
     //run
+    echo "<table>";
+    echo "<th>Round</th><th>Player1</th><th>Player2</th>";
     while(array_sum($p1) < 25 && array_sum($p2) < 25){
-        $p1 = rollDice($p1);
-        $p2 = rollDice($p2);
+        echo "<tr>";
+        echo "<td>$round</td>";
+        echo "<td>".$p1[] = random_int(1, 6)."</td>";
+        echo "<td>".$p2[] = random_int(1, 6)."</td>";        
+        echo "</tr>";
+        $round++;
     }
+    echo "<th>Sum:</th><th>".array_sum($p1)."</th><th>".array_sum($p2)."</th>";
+    echo "</table>";
 
     //end scenario (winning, draw)
     if (array_sum($p1) > array_sum($p2)){
@@ -27,19 +42,9 @@
         $winner = "draw";
     }
     else $winner = "player 2";
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>1v1</title>
-</head>    
-<body>
-    <h1>game of dice</h1>
-    <p>both players roll until one reaches 25</p>
-    <?php
-        echo "winner: ".$winner;
-    ?>
+    //output result
+    echo "<br>The winner is: ".$winner;
+?>
 </body>
 </html>
