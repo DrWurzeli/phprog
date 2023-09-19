@@ -1,29 +1,34 @@
 <?php
     //dice game random numbers till 25
 
+    //setup
     $p1 = $p2 = array();
-    $winner = "";
+    $winner = "game is still going on";
 
-    function rollDice(){
-        $zahl1 = random_int(1, 6);
-        $zahl2 = random_int(1, 6);
-        $p1[] = $zahl1;
-        $p2[] = $zahl2;
+    //dice roll helper function
+    function rollDice(array $arr){
+        $newRoll = random_int(1, 6);
+        $arr[] = $newRoll;
+        //echo $newRoll." ";
+        return $arr;
     };
 
+    //run
     while(array_sum($p1) < 25 && array_sum($p2) < 25){
-        rollDice();
+        $p1 = rollDice($p1);
+        $p2 = rollDice($p2);
     }
 
+    //end scenario (winning, draw)
     if (array_sum($p1) > array_sum($p2)){
         $winner = "player 1";
     }
     elseif (array_sum($p1) == array_sum($p2)){
-        $winner = "none";
+        $winner = "draw";
     }
     else $winner = "player 2";
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +36,10 @@
     <title>1v1</title>
 </head>    
 <body>
+    <h1>game of dice</h1>
+    <p>both players roll until one reaches 25</p>
     <?php
-        echo "the winner is: ".$winner;
+        echo "winner: ".$winner;
     ?>
 </body>
 </html>
