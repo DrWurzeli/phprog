@@ -16,9 +16,9 @@
                 $bruttosumme += $preise[$i]*$ust;
             }
             echo "<br>";
-            echo "Nettosumme: ".$nettosumme."Euro <br>";
-            echo "Umsatzsteuer: 19 %<br>";
-            echo "Bruttosumme: ".$bruttosumme."Euro <br";
+            echo "Nettosumme: ".$nettosumme." Euro <br>";
+            echo "Umsatzsteuer: ".substr($ust, 2)." %<br>";
+            echo "Bruttosumme: ".$bruttosumme." Euro <br";
         ?>
     </body>
 </html>
