@@ -10,6 +10,7 @@
             $nettosumme = 0;
             $ust = 1.19;
             $bruttosumme = 0;
+            
             for($i=0; $i<count($preise); $i++){
                 $nettosumme += $preise[$i];
                 echo "Artikel ".($i+1).": ".$preise[$i]." Euro"."<br>";
@@ -18,7 +19,7 @@
             echo "<br>";
             echo "Nettosumme: ".$nettosumme." Euro <br>";
             echo "Umsatzsteuer: ".substr($ust, 2)." %<br>";
-            echo "Bruttosumme: ".$bruttosumme." Euro <br";
+            echo "Bruttosumme: ".$bruttosumme." Euro <br>";
         ?>
     </body>
 </html>
