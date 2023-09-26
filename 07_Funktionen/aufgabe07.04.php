@@ -5,7 +5,7 @@ $file2 = "test.jpeg";
 $file3 = "test.xml";
 $file4 = "test.jpg";
 
-function testFile($file, $muster = "/\.jpe?g$/"){
+function testFile($file, $muster = "/.\.jpe?g$/"){
     if(preg_match($muster, $file)){
         echo "file ".$file." accepted";
         echo "<br>";
