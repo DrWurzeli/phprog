@@ -4,14 +4,14 @@ $file1 = "test.jpg";
 $file2 = "test.jpeg";
 $file3 = "test.xml";
 
-$muster = "/jpe?/";
+$muster = "/jpe?g$/";
 
 function testFile($file, $muster){
     if(preg_match($muster, $file)){
-        echo "file accepted";
+        echo "file ".$file." accepted";
         echo "<br>";
     }
-    else echo "file not accepted <br>";
+    else echo "file ".$file." not accepted <br>";
 }
 
 testFile($file1, $muster);
