@@ -1,10 +1,10 @@
 <?php
 
-$file1 = "test.jpg";
+$file1 = "test.hhjpg";
 $file2 = "test.jpeg";
 $file3 = "test.xml";
 
-function testFile($file, $muster = "/jpe?g$/"){
+function testFile($file, $muster = "/\.jpe?g$/"){
     if(preg_match($muster, $file)){
         echo "file ".$file." accepted";
         echo "<br>";
