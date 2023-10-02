@@ -12,7 +12,3 @@ class Fahrzeug {
         echo "Fahrzeug gestoppt.<br>";
     }
 }
-
-$auto = new Fahrzeug();
-$auto->starten();
-$auto->stoppen();
