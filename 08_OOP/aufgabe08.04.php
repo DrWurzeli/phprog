@@ -29,7 +29,7 @@ try{
     if(function_exists("fkt")){
         fkt();
         echo "Ende";
-    } else throw new Exception("Funktion existiert nicht.");
+    } else throw new Exception("Funktion existiert nicht.", 0);
 } catch(Exception $e){
     echo $e->getMessage()."<br>";
 }
