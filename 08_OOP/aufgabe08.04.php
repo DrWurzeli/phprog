@@ -27,7 +27,7 @@ try{
 
 try{
     if(function_exists("fkt")){
-        fkt();
+        //fkt();
         echo "Ende";
     } else throw new Exception("Funktion existiert nicht.", 0);
 } catch(Exception $e){
