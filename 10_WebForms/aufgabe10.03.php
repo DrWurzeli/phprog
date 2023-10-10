@@ -29,7 +29,7 @@
         }
         else{
             $brutto = brutto($_POST['netto'], $_POST['ust']);
-            echo htmlspecialchars($_POST['netto'])." ergibt ".htmlspecialchars($brutto)." inklusive USt.<br>"; 
+            echo htmlspecialchars($_POST['netto'])." ergibt ".htmlspecialchars($brutto)." inklusive ".htmlspecialchars($_POST['ust'])."% USt.<br>"; 
         }
     }
 ?>
