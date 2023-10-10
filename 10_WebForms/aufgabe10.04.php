@@ -1,5 +1,4 @@
 <?php
-
 if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
 ?>
 <html>
@@ -35,7 +34,7 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
     if(isset($_POST['vorname']) && isset($_POST['nachname'])
     && isset($_POST['email']) && isset($_POST['phone'])
     && isset($_POST['thema']) && is_array($_POST['thema'])){
-        echo "Ihre Eingaben<br>";
+        echo "Ihre Eingaben:<br>";
         echo "Vorname: ".htmlspecialchars($_POST['vorname'])."<br>";
         echo "Name: ".htmlspecialchars($_POST['nachname'])."<br>";
         echo "E-Mail: ".htmlspecialchars($_POST['email'])."<br>";
@@ -44,7 +43,9 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
         foreach($_POST["thema"] as $e){
             echo htmlspecialchars($e)."<br>";
         }
-        echo "<br>";
+    }
+    else {
+        header("Location: ".htmlspecialchars($_SERVER["PHP_SELF"]));
     }
 }
 ?>
