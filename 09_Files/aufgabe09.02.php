@@ -15,17 +15,17 @@ $under1k = 0;
                 $id = fgets($file);
                 if ($id >= 1000){
                     $over1k++;
-                    $fileb = fopen("u_schreiben_b", "w");
+                    $fileb = fopen("u_schreiben_b.txt", "w");
                     if($fileb){
-                        fputs($fileb, fgets($file)."\n".fgets($file));
+                        fputs($fileb, fgets($file).fgets($file));
                         fclose($fileb);
                     }
                 }
                 else{
                     $under1k++;
-                    $filea = fopen("u_schreiben_a", "w");
+                    $filea = fopen("u_schreiben_a.txt", "w");
                     if($filea){
-                        fputs($filea, fgets($file)."\n".fgets($file));
+                        fputs($filea, fgets($file).fgets($file));
                         fclose($filea);
                     }
                 }
