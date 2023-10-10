@@ -8,21 +8,21 @@ if(!(isset($_POST['vorname']) && isset($_POST['nachname'])
     <title>Forms</title>
 </head>
 <body>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-Ihr Vorname: <br />
-<input type="text" name="vorname" size="20" maxlength="30" />
-<br />
-Ihr Nachname: <br />
-<input type="text" name="nachname" size="20" maxlength="30" />
-<br />
-Ihre E-Mail Adresse: <br />
-<input type="text" name="email" size="20" maxlength="30" />
-<br />
-Ihre Telefonnummer: <br />
-<input type="text" name="phone" size="20" maxlength="30" />
-<br />
-<input type="submit" value="Abschicken" />
-</form>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+    Ihr Vorname: <br />
+    <input type="text" name="vorname" size="20" maxlength="30" />
+    <br />
+    Ihr Nachname: <br />
+    <input type="text" name="nachname" size="20" maxlength="30" />
+    <br />
+    Ihre E-Mail Adresse: <br />
+    <input type="text" name="email" size="20" maxlength="30" />
+    <br />
+    Ihre Telefonnummer: <br />
+    <input type="text" name="phone" size="20" maxlength="30" />
+    <br />
+    <input type="submit" value="Abschicken" />
+    </form>
 </body>
 </html>
 <?php
