@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Forms</title>
-</head>
-<body>
-<form action="out.php" method="get">
-Ihr Vorname: <br />
-<input type="text" name="vorname" size="20" maxlength="30" />
-<br />
-Ihr Nachname: <br />
-<input type="text" name="nachname" size="20" maxlength="30" />
-<br />
-Ihre E-Mail Adresse: <br />
-<input type="text" name="email" size="20" maxlength="30" />
-<br />
-Ihre Telefonnummer: <br />
-<input type="text" name="phone" size="20" maxlength="30" />
-<br />
-<input type="submit" value="Abschicken" />
-</form>
-</body>
-</html>
+<?php
+
+echo "Ihre Eingaben<br>";
+echo "Vorname: ".htmlspecialchars($_GET['vorname'])."<br>";
+echo "Name: ".htmlspecialchars($_GET['nachname'])."<br>";
+echo "E-Mail: ".htmlspecialchars($_GET['email'])."<br>";
+echo "Telefon: ".htmlspecialchars($_GET['phone'])."<br>";
