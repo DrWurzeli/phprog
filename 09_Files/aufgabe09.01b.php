@@ -19,10 +19,6 @@
                 printf("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $x++, $arr[$i], $arr[$i+1]);
             }
             echo "</table>";
-
-            for($t=0; $t<10; $t+=2){
-                echo "test";
-            }
         }
         else "Datei ist leer.";
    }
