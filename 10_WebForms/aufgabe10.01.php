@@ -4,7 +4,7 @@
     <title>Forms</title>
 </head>
 <body>
-<form action="verarbeitung.php" method="get">
+<form action="out.php" method="get">
 Ihr Vorname: <br />
 <input type="text" name="vorname" size="20" maxlength="30" />
 <br />
