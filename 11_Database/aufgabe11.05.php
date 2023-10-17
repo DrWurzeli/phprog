@@ -36,7 +36,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['send'])
     &&isset($_POST['hersteller']) && isset($_POST['typ']) && isset($_POST['gb']) && isset($_POST['gb']) && 
     isset($_POST['preis']) && isset($_POST['artikelnummer']) && isset($_POST['datum'])){
         $con = mysqli_connect("", "root", "");
-        mysqli_select_db($con, "hardware");
         if($con){
             mysqli_select_db($con, "hardware");
             $sql = "INSERT INTO fp (hersteller, typ, gb, preis, artnummer, prod)";
