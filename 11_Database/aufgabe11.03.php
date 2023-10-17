@@ -1,6 +1,3 @@
-<?php
-if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
-?>
 <html>
 <head>
     <title>Preisgruppe</title>
@@ -23,8 +20,7 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
 </body>
 </html>
 <?php
-} else {
-    if(isset($_POST['preisgrp'])){
+    if(isset($_POST['preisgrp']) && $_SERVER['REQUEST_METHOD'] == "POST"){
         echo "Es wurden folgende Produkte gefunden:<br>";
         $con = mysqli_connect("","root", "");
         mysqli_select_db($con, "hardware");
@@ -52,8 +48,7 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
             $dsatz["preis"] . "<br />";
         mysqli_close($con);
     }
-    else {
-        header("Location: ".htmlspecialchars($_SERVER["PHP_SELF"]));
+    else{
+        echo "";
     }
-}
 ?>
