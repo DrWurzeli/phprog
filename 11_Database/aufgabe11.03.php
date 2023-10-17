@@ -15,6 +15,8 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
     ab 120 EUR und bis 140 EUR einschließlich.<br>
     <input type="radio" name="preisgrp" value="3"/>
     ab 140 EUR ausschließlich.<br>
+    <input type="checkbox" name="sorting" value="" />
+    Nach Preis (absteigend) sortieren.<br>
     <input type="submit" value="Abschicken" />
     <input type="reset"/>
     </form>
@@ -37,6 +39,9 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')){
         case 3:
             $sql .= "preis > 140";
         break;
+        }
+        if(isset($_POST['sorting'])){
+            $sql .= " order by preis DESC";
         }
         $res = mysqli_query($con, $sql);
         $num = mysqli_num_rows($res);
