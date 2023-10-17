@@ -18,7 +18,14 @@ $sql .= " order by prod";
 $res = mysqli_query($con, $sql);
 $num = mysqli_num_rows($res);
 echo "$num Datensätze gefunden<br />";
-while ($dsatz = mysqli_fetch_assoc($res))
-echo $dsatz["hersteller"] . ", " . $dsatz["typ"] . ", " . $dsatz["artnummer"] . 
-", " . $dsatz["prod"] . "<br />";
+while ($dsatz = mysqli_fetch_assoc($res)){
+    /*
+    foreach($dsatz as $e){
+        echo $e.", ";
+    }
+    echo "<br>";
+    */
+    echo $dsatz["hersteller"] . ", " . $dsatz["typ"] . ", " . $dsatz["artnummer"] . 
+    ", " . $dsatz["prod"] . "<br />";
+}
 mysqli_close($con);
