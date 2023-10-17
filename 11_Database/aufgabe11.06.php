@@ -12,15 +12,20 @@ Tabelle fp der Datenbank hardware.
 <body>
 <?php
 function selectall(){
-    $con = mysqli_connect("", "root", "");
-    if ($con) {
-        mysqli_select_db($con, "hardware");
-        $sql = "SELECT * from fp";
-        $res = mysqli_query($con, $sql);
-        mysqli_close($con);
-        return $res;
+    try{
+        $con = mysqli_connect("", "root", "");
+        if ($con) {
+            mysqli_select_db($con, "hardware");
+            $sql = "SELECT * from fp";
+            $res = mysqli_query($con, $sql);
+            mysqli_close($con);
+            return $res;
+        }
     }
-    else return "error";
+    catch(Exception){
+        return "error";
+    }
+    return "error";
 }
 
 if (empty($_POST)) {
@@ -30,14 +35,14 @@ if (empty($_POST)) {
     </form>
      <?php
 } else if (isset($_POST['send']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-        <input type="submit" value="Neuladen" name="send" />
-    <?php
-    echo "<table border=1>";
-    echo "<th>Corp</th><th>Typ</th><th>GB</th><th>Price</th><th>ID</th><th>Date</th>";
     $res = selectall();
     if($res <> "error"){
+        ?>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+            <input type="submit" value="Neuladen" name="send" />
+        <?php
+        echo "<table border=1>";
+        echo "<th>Corp</th><th>Typ</th><th>GB</th><th>Price</th><th>ID</th><th>Date</th>";
         while ($ans = mysqli_fetch_assoc(($res))) {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($ans['hersteller']) . "</td>";
@@ -48,21 +53,22 @@ if (empty($_POST)) {
             echo "<td>" . htmlspecialchars($ans['prod']) . "</td>";
             echo "</tr>";
         }
+        echo "</table>";
+        echo "<input type='submit' value='Daten bearbeiten' name='select'/>";
+        echo "<input type='submit' value='Abbrechen' name='cancel'/>";
+        echo "</form>";
     }
-    echo "</table>";
-    echo "<input type='submit' value='Daten bearbeiten' name='select'/>";
-    echo "<input type='submit' value='Abbrechen' name='cancel'/>";
-    echo "</form>";
+    else echo "connection failed. Go <a href='".htmlspecialchars($_SERVER["PHP_SELF"])."'>back</a>.";
 }
 else if (isset($_POST['select']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-        <input type="submit" value="Neuladen" name="send" />
-    <?php
-    echo "<table border=1>";
-    echo "<th>Corp</th><th>Typ</th><th>GB</th><th>Price</th><th>ID</th><th>Date</th><th>edit</th>";
     $res = selectall();
     if($res <> "error"){
+        ?>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+            <input type="submit" value="Neuladen" name="send" />
+        <?php
+        echo "<table border=1>";
+        echo "<th>Corp</th><th>Typ</th><th>GB</th><th>Price</th><th>ID</th><th>Date</th><th>edit</th>";
         while ($ans = mysqli_fetch_assoc(($res))) {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($ans['hersteller']) . "</td>";
@@ -74,11 +80,12 @@ else if (isset($_POST['select']) && $_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<td> <input type='checkbox' name='toedit[]' value='" . htmlspecialchars($ans['artnummer']) ."' /></td>";
             echo "</tr>";
         }
+        echo "</table>";
+        echo "<input type='submit' value='Datensatz bearbeiten' name='edit'/>";
+        echo "<input type='submit' value='Abbrechen' name='cancel'/>";
+        echo "</form>";
     }
-    echo "</table>";
-    echo "<input type='submit' value='Datensatz bearbeiten' name='edit'/>";
-    echo "<input type='submit' value='Abbrechen' name='cancel'/>";
-    echo "</form>";
+    else echo "connection failed. Go <a href='".htmlspecialchars($_SERVER["PHP_SELF"])."'>back</a>.";
 }
 else if (isset($_POST['edit']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     if(!empty($_POST['toedit']) && is_array($_POST['toedit'])){
