@@ -25,5 +25,4 @@ else{
     echo "<br>Sie haben noch keine Artikel hinzugefügt.<br>";
 }
 
-
 echo "<br><a href='shop.php'>Zurück zum Shop</a>";
