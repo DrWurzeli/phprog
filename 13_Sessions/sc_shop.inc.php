@@ -4,16 +4,16 @@ $abtname[0] = "Unterhaltungselektronik";
 $abtname[1] = "DVD/Video";
 $abtname[2] = "Mobilfunk";
 /* Namen der Artikel */
-$aname[0][0] = "Kopfhörerset";
+$aname[0][0] = "Kopfhoererset";
 $aname[0][1] = "Funklautsprecher";
 $aname[0][2] = "Uhrenradio";
-$aname[0][3] = "Weltempfänger";
+$aname[0][3] = "Weltempfaenger";
 $aname[1][0] = "DVD-Recorder";
 $aname[1][1] = "DVD-Player";
 $aname[1][2] = "Fernbedienung";
 $aname[1][3] = "Portable DVD-Kombi";
 $aname[1][4] = "DVD-Videokombi";
-$aname[2][0] = "PMR-Funkgerätepaar";
+$aname[2][0] = "PMR-Funkgeraetepaar";
 $aname[2][1] = "Handscanner";
 $aname[2][2] = "Doppelstandlader";
 /* Nummern der Artikel */
